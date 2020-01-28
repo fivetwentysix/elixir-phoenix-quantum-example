@@ -11,7 +11,8 @@ defmodule Foobar.Application do
       # Start the Ecto repository
       Foobar.Repo,
       # Start the endpoint when the application starts
-      FoobarWeb.Endpoint
+      FoobarWeb.Endpoint,
+      Foobar.Scheduler
       # Starts a worker by calling: Foobar.Worker.start_link(arg)
       # {Foobar.Worker, arg},
     ]

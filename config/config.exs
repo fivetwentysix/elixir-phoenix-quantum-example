@@ -17,6 +17,9 @@ config :foobar, FoobarWeb.Endpoint,
   render_errors: [view: FoobarWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Foobar.PubSub, adapter: Phoenix.PubSub.PG2]
 
+config :foobar, Foobar.Scheduler,
+  jobs: [{"* * * * *", {Foobar.Heartbeat, :insert_post, []}}]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
